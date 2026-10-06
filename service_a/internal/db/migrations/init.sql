@@ -1,4 +1,4 @@
--- Active: 1744549994418@@localhost@443@postgres
+-- Active: 1751321030208@@127.0.0.1@5432@postgres
 
 CREATE TABLE IF NOT EXISTS outbox (
   id UUID PRIMARY KEY,
@@ -7,4 +7,4 @@ CREATE TABLE IF NOT EXISTS outbox (
   value INT NOT NULL
 );
 
-CREATE INDEX idx_outbox_sent_at ON outbox(sent_at);
+CREATE INDEX IF NOT EXISTS idx_outbox_sent_at ON outbox(sent_at);
