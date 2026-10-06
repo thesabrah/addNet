@@ -74,7 +74,7 @@ services:
       retries: 5
 
   db:
-    image: postgres:latest
+    image: postgres:18
     container_name: postgres_db
     restart: always
     environment:
@@ -84,8 +84,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-
+      - pg18_data:/var/lib/postgresql
 volumes:
   prom_data:
-  postgres_data:
+  pg18_data:
